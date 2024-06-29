@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+	<head data-th-replace="~{/layouts/header :: head}"></head>
+	<body>
+		<header data-th-replace="~{/layouts/header :: header}"></header>
+		<div class="container">
+			<div class="bg-light mt-3 mb-3 container rounded">
+				<div class="d-flex justify-content-between align-items-center bg-body-tertiary p-3">
+					<h2 class="mt-1" data-th-text="${edicion}?'Modificar Docente':'Nuevo Docente'"></h2>
+				</div>
+			</div>
+			<form data-th-action="${edicion}?@{/docente/modificar} : @{/docente/guardar}" th:object="${docente}" class="row" method="post">
+				<div class="mb-3 col-8">
+			  		<label for="codDocente" class="form-label custom-label" >Legajo:</label>
+			  		<input type="number" class="form-control" id="codDocente" th:field="*{legajo}" th:disabled="${edicion}">
+					<input type="hidden" class="form-control" id="codDocente" th:field="*{legajo}" th:id="${edicion}">
+				</div>
+				<div class="mb-3 col-8">
+			  		<label for="nombreDocente" class="form-label custom-label">Nombre:</label>
+			  		<input type="text" class="form-control" id="nombreDocente" th:field="*{nombre}">
+				</div>
+				<div class="mb-3 col-8">
+			  		<label for="apelldoDocente" class="form-label custom-label">Apelido:</label>
+			  		<input type="text" class="form-control" id="apelldoDocente" th:field="*{apellido}">
+				</div>
+				<div class="mb-3 col-8">
+			  		<label for="emailDocente" class="form-label custom-label">E-mail:</label>
+			  		<input type="text" class="form-control" id="emailDocente" th:field="*{email}">
+				</div>
+				<div class="mb-3 col-8">
+					<label for="telefonoDocente" class="form-label custom-label">Teléfono:</label>
+			  		<input type="number" class="form-control" id="telefonoDocente" th:field="*{telefono}">
+				</div>
+				<div class="mb-3 col-8">
+					<p><input type="submit" class="btn btn-primary" th:value="${edicion}?'Modificar':'Guardar'"></input></p>
+				</div>
+			</form>
+		</div>
+		<footer data-th-replace="~{/layouts/footer :: footer}"></footer>
+		<script type="text/javascript" th:scr="@{/webjars/bootstrap/js/bootstrap.bundle.min.js}" ></script>
+	</body>
+</html>
