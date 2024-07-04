@@ -47,7 +47,7 @@ public static List<Carrera> carreras = new ArrayList<Carrera>();
 	
 	public static void modificarCarrera(Carrera carrera) {
 		for(Carrera c : carreras) {
-			if(c.getCodigo() == carrera.getCodigo()) {
+			if(c.getCodigo().equals(carrera.getCodigo())) {
 				c.setNombre(carrera.getNombre());
 				c.setAnios(carrera.getAnios());
 				c.setEstado(carrera.getEstado());

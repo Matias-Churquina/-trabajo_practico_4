@@ -15,7 +15,6 @@ public static List<Alumno> alumnos = new ArrayList<Alumno>();
 	
 	public static List<Alumno> getListaAlumnos() {
 		if(alumnos.isEmpty()) {
-			//LocalDate fecha1 = LocalDate.parse("2003-09-09");
 			alumnos.add( new Alumno(46100111, "Ariel", "González", "arielgonzalez@gmail.com", 38851111, LocalDate.parse("2003-09-09"), "Valle 456", "5001"));
 			alumnos.add( new Alumno(46200222, "Lucas", "Aguirre", "lucasaguirre@gmail.com", 38852222, LocalDate.parse("2000-09-09"), "Libertador 15", "5002"));
 			alumnos.add( new Alumno(46300333, "Matias", "Zambrana", "matiaszambrana@gmail.com", 38853333, LocalDate.parse("2004-09-09"), "España 70", "5003"));
@@ -52,7 +51,7 @@ public static List<Alumno> alumnos = new ArrayList<Alumno>();
 	
 	public static void modificarAlumno(Alumno alumno) {
 		for(Alumno a : alumnos) {
-			if(a.getDni() == alumno.getDni()) {
+			if(a.getDni().equals(alumno.getDni())) {
 				a.setNombre(alumno.getNombre());
 				a.setApellido(alumno.getApellido());
 				a.setEmail(alumno.getEmail());

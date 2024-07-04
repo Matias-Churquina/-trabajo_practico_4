@@ -50,7 +50,7 @@ public class CollectionMateria {
 	
 	public static void modificarMateria(Materia materia) {
 		for(Materia m : materias) {
-			if(m.getCodigo() == materia.getCodigo()) {
+			if(m.getCodigo().equals(materia.getCodigo())) {
 				m.setNombre(materia.getNombre());
 				m.setHoras(materia.getHoras());
 				m.setModalidad(materia.getModalidad());
