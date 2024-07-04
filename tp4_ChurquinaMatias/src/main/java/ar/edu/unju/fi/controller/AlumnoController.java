@@ -57,6 +57,7 @@ public class AlumnoController {
 
 	@PostMapping("/modificar")
 	public String modificarCarrera(@ModelAttribute("alumno") Alumno alumno) {
+		System.out.println(alumno);
 		CollectionAlumno.modificarAlumno(alumno);
 		return "redirect:/alumno/listado";
 	}

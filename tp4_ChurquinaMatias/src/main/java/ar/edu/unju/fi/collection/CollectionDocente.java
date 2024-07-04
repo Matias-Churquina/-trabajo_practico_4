@@ -48,7 +48,7 @@ public class CollectionDocente {
 	
 	public static void modificarDocente(Docente docente) {
 		for(Docente d : docentes) {
-			if(d.getLegajo() == docente.getLegajo()) {
+			if(d.getLegajo().equals(docente.getLegajo())) {
 				d.setNombre(docente.getNombre());
 				d.setApellido(docente.getApellido());
 				d.setEmail(docente.getEmail());
